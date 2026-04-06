@@ -1,10 +1,15 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
+from app.routes.chat import router as chat_router
+from app.memory.database import init_db
+from app.routes.onboarding import router as onboarding_router
 
 load_dotenv()
 
 app = FastAPI(title="JARVIS")
+
+app.include_router(onboarding_router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -13,6 +18,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(chat_router)
+
+@app.on_event("startup")
+def startup():
+    init_db()
 
 @app.get("/")
 def root():

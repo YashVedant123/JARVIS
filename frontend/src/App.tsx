@@ -8,6 +8,7 @@ import Chat from './pages/Chat'
 import SystemLog from './components/SystemLog'
 import WeatherWidget from './components/WeatherWidget'
 import { type LogEntry } from './components/SystemLog'
+import MapWidget from './components/MapWidget'
 
 const API = 'http://localhost:8000'
 
@@ -80,6 +81,7 @@ export default function App() {
             {!isMinimized('chat') && <Chat onMinimize={handleMinimize} addLog={addLog} userLocation={userLocation} />}
             {!isMinimized('syslog') && <SystemLog logs={logs} onMinimize={handleMinimize} />}
             {!isMinimized('weather') && <WeatherWidget isOwner={isOwner} onMinimize={handleMinimize} addLog={addLog} onLocationFound={setUserLocation} />}
+            {!isMinimized('map') && <MapWidget isOwner={isOwner} onMinimize={handleMinimize} addLog={addLog} />}
           </>
         )}
       </div>

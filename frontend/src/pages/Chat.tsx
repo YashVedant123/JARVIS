@@ -48,6 +48,7 @@ export default function Chat({ onMinimize, addLog, userLocation }: Props) {
       location: userLocation || null
     })
     setMessages([...updated, { role: 'assistant', content: res.data.response }])
+    if (res.data.searched) addLog?.('info', 'Web search performed')
     addLog?.('success', 'Response received')
     setLoading(false)
   }

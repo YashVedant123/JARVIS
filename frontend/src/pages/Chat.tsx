@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import axios from 'axios'
 import Widget from '../components/Widget'
 
-const API = 'http://localhost:8000'
+const API = 'https://jarvis-poko.onrender.com'
 
 interface Message {
   role: 'user' | 'assistant'

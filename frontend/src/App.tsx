@@ -10,7 +10,7 @@ import WeatherWidget from './components/WeatherWidget'
 import { type LogEntry } from './components/SystemLog'
 import MapWidget from './components/MapWidget'
 
-const API = 'http://localhost:8000'
+const API = 'https://jarvis-poko.onrender.com'
 
 interface MinimizedWidget {
   id: string

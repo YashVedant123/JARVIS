@@ -2,5 +2,5 @@ fastapi==0.135.3
 uvicorn==0.43.0
 python-dotenv==1.2.2
 cerebras-cloud-sdk==1.67.0
-travily-python==0.7.23
+tavily-python==0.7.23
 pydantic==2.12.5
